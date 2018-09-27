@@ -35,7 +35,7 @@ function loginAttempt() {
   document.getElementById("username").value = "";
    document.getElementById("email").value = "";
   document.getElementById("password").value = "";
-location.reload();
+document.getElementById("header").value = "User " + username + " has been added \n REGISTRER NEW USER";
 }
 
 function loginFailed() {
