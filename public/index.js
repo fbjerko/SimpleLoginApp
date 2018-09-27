@@ -13,7 +13,7 @@ function addUser(event) {
    
     
   };
-  xhttp.open('POST', 'http://localhost:8888/api', true);
+  xhttp.open('POST', 'https://fbjerko-login-page.herokuapp.com/api', true);
   xhttp.setRequestHeader("Content-type", "application/json");
   xhttp.send('{"username": "'+ username +'", "email": "'+ email +'", "password": "'+password+'"}');
  
