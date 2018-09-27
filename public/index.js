@@ -14,7 +14,7 @@ function addUser(event) {
       // Bruker finnes, sjekker passord
       //alert("User " + username + " has been added");
       loginAttempt();
-      startModal();
+      
     }
 
    if(xhttp.readyState === 4 && xhttp.status === 400) {
@@ -37,6 +37,7 @@ function loginAttempt() {
    document.getElementById("email").value = "";
   document.getElementById("password").value = "";
 document.getElementById("modal").innerHTML = "User " + username + " has been added";
+modal.style.display = "block";
 }
 
 function toAdminPage() {
@@ -47,7 +48,6 @@ function loginFailed() {
 
 }
 
-function startModal() {
 
 var modal = document.getElementById('myModal');
 
@@ -57,10 +57,7 @@ var btn = document.getElementById("submit");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
