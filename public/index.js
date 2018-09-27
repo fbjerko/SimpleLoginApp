@@ -16,11 +16,9 @@ function addUser(event) {
       sjekkPassord();
     }
 
-   else  if(xhttp.readyState === 4 && xhttp.status === 400) {
+   if(xhttp.readyState === 4 && xhttp.status === 400) {
       alert("User " + username + " already exists");
       leggTilID();
-  } else {
-    alert("Something didn't work");
   }
 
    
@@ -34,6 +32,9 @@ function addUser(event) {
 
 
 function loginSuccess() {
+  document.getElementById("username").value = "";
+   document.getElementById("email").value = "";
+  document.getElementById("password").value = "";
 location.reload();
 }
 
