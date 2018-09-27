@@ -13,13 +13,13 @@ function addUser() {
     if(xhttp.readyState === 4 && xhttp.status === 200) {
       // Bruker finnes, sjekker passord
       //alert("User " + username + " has been added");
-      loginAttempt();
+      newUserSuccess();
       
     }
 
    if(xhttp.readyState === 4 && xhttp.status === 400) {
      
-      loginAttempt();
+      newUserFailed();
    }
     
   };
@@ -62,11 +62,19 @@ function validate(event) {
 }
 
 
-function loginAttempt() {
+function newUserSuccess() {
   document.getElementById("username").value = "";
    document.getElementById("email").value = "";
   document.getElementById("password").value = "";
 document.getElementById("modal").innerHTML = "User " + username + " has been added";
+modal.style.display = "block";
+}
+
+function newUserFailed() {
+  document.getElementById("username").value = "";
+   document.getElementById("email").value = "";
+  document.getElementById("password").value = "";
+document.getElementById("modal").innerHTML = "User " + username + " already exists";
 modal.style.display = "block";
 }
 
