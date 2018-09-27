@@ -1,5 +1,6 @@
 function addUser() {
 
+  console.log("SENDT YEAH");
   
  var username = document.getElementById("username").value;
  var email = document.getElementById("email").value;
@@ -32,19 +33,32 @@ function validate(event) {
   event.preventDefault()
 
   var username = document.getElementById("username").value;
+  if(username === "") {
+    document.getElementById("modal").innerHTML = "You must enter a username";
+      return loginFailed();
+      
+  }
+
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
 
-
-  
+    var emailRGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var emailResult = emailRGEX.test(email);
     var passwordRGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
     var passwordResult = passwordRGEX.test(password);
-    if(passwordResult === true){
+
+    if(passwordResult === true && emailResult === true){
       addUser();
+    } else if (passwordResult && !emailResult) {
+      document.getElementById("modal").innerHTML = "Enter a valid E-Mail address";
+      loginFailed();
+    } else if (!passwordResult && emailResult) {
+      document.getElementById("modal").innerHTML = "Enter a valid Password";
+      loginFailed();
     } else {
+      document.getElementById("modal").innerHTML = "Enter a valid Email and Password";
       loginFailed();
     }
-
 }
 
 
@@ -61,9 +75,9 @@ function toAdminPage() {
 }
 
 function loginFailed() {
-  document.getElementById("username").value = "";
-  document.getElementById("email").value = "";
+ 
  document.getElementById("password").value = "";
+ modal.style.display = "block";
 }
 
 
