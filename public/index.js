@@ -13,7 +13,7 @@ function addUser() {
     if(xhttp.readyState === 4 && xhttp.status === 200) {
       // Bruker finnes, sjekker passord
       //alert("User " + username + " has been added");
-      newUserSuccess();
+      newUserSuccess(username);
       
     }
 
@@ -62,7 +62,7 @@ function validate(event) {
 }
 
 
-function newUserSuccess() {
+function newUserSuccess(username) {
   document.getElementById("username").value = "";
    document.getElementById("email").value = "";
   document.getElementById("password").value = "";
