@@ -10,6 +10,19 @@ function addUser(event) {
   
   xhttp.onreadystatechange = function() {
 
+    if(xhttp.readyState === 4 && xhttp.status === 200) {
+      // Bruker finnes, sjekker passord
+      alert("User " + username + " has been added");
+      sjekkPassord();
+    }
+
+   else  if(xhttp.readyState === 4 && xhttp.status === 400) {
+      alert("User " + username + " already exists");
+      leggTilID();
+  } else {
+    alert("Something didn't work");
+  }
+
    
     
   };
@@ -21,7 +34,7 @@ function addUser(event) {
 
 
 function loginSuccess() {
-
+location.reload();
 }
 
 function loginFailed() {
