@@ -13,13 +13,13 @@ function addUser(event) {
     if(xhttp.readyState === 4 && xhttp.status === 200) {
       // Bruker finnes, sjekker passord
       alert("User " + username + " has been added");
-      sjekkPassord();
+      loginAttempt();
     }
 
    if(xhttp.readyState === 4 && xhttp.status === 400) {
       alert("User " + username + " already exists");
-      leggTilID();
-  }
+      loginAttempt();
+   }
 
    
     
@@ -31,7 +31,7 @@ function addUser(event) {
 }
 
 
-function loginSuccess() {
+function loginAttempt() {
   document.getElementById("username").value = "";
    document.getElementById("email").value = "";
   document.getElementById("password").value = "";
