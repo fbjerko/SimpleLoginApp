@@ -15,13 +15,13 @@ app.use( express.static(__dirname + '/views'));
 
 
 app.post('/api', function(req, res) {
-  console.log("JA");
+  
   user.add(db, req, res);
   
 }); // app.post
 
 app.get('/api', function(req, res) {
-  console.log("NEI");
+  
   user.get(db, req, res);
 
 });
@@ -40,7 +40,7 @@ app
   
   
 
-app.listen(8888, () => console.log("Example app listening on port 8888!"));
+app.listen(process.env.PORT || 8888, () => console.log("Example app listening on port 8888!"));
 
 var user = {};
 user.add = function(db, req, res) {
