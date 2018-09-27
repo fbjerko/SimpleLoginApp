@@ -33,8 +33,9 @@ app
   });
 
   app
-  .get( '/admin.html', function( req, res ) {
+  .get( '/admin', function( req, res ) {
     res.sendFile( path.join( __dirname, 'views', 'admin.html' ));
+    user.get(db, req, res);
   
   });
   
