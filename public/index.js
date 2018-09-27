@@ -12,7 +12,7 @@ function addUser(event) {
 
     if(xhttp.readyState === 4 && xhttp.status === 200) {
       // Bruker finnes, sjekker passord
-      alert("User " + username + " has been added");
+      //alert("User " + username + " has been added");
       loginAttempt();
     }
 
@@ -35,7 +35,7 @@ function loginAttempt() {
   document.getElementById("username").value = "";
    document.getElementById("email").value = "";
   document.getElementById("password").value = "";
-document.getElementById("header").value = "User " + username + " has been added \n REGISTRER NEW USER";
+document.getElementById("header").innerHTML = "User " + username + " has been added \n REGISTRER NEW USER";
 }
 
 function loginFailed() {
