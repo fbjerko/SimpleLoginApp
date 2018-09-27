@@ -16,6 +16,8 @@
         <h1 id="header">Registrer new user</h1>
     </header>
 
+    <button class="button" onclick="toAdminPage()">Admin Page</button>
+
     <form onsubmit=addUser(event)>
         <h3>User name</h3>
         <input type="text" id="username">
@@ -26,8 +28,20 @@
         <h3>Password</h3>
         <input type="password" id="password">
         <br>
-        <input type="submit" value="Registrer">
+        <input type="submit" id="submit" value="Registrer">
       </form> 
+
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3 id="modal">Modal</h3>
+        </div>
+      
+      </div>
+
+     
 
  <script type=text/javascript src="index.js"></script>
 

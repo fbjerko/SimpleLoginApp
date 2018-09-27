@@ -14,6 +14,7 @@ function addUser(event) {
       // Bruker finnes, sjekker passord
       //alert("User " + username + " has been added");
       loginAttempt();
+      startModal();
     }
 
    if(xhttp.readyState === 4 && xhttp.status === 400) {
@@ -35,9 +36,41 @@ function loginAttempt() {
   document.getElementById("username").value = "";
    document.getElementById("email").value = "";
   document.getElementById("password").value = "";
-document.getElementById("header").innerHTML = "User " + username + " has been added \n REGISTRER NEW USER";
+document.getElementById("modal").innerHTML = "User " + username + " has been added";
+}
+
+function toAdminPage() {
+  window.open('https://fbjerko-login-page.herokuapp.com/admin', '_blank');
 }
 
 function loginFailed() {
 
 }
+
+function startModal() {
+
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("submit");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+} 
