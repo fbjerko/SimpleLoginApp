@@ -21,7 +21,7 @@ form {
 }
 
 input[type="submit"] {
-  background: #aeb3bb;
+  background: #959aa1;
   color: white;
   border: 1px solid;
   border-radius: 10px;
@@ -30,29 +30,16 @@ input[type="submit"] {
   height: 50px;
   margin: 0%;
   width: 170px;
-
   font: bold 15px arial, sans-serif;
 }
 
 input[type="submit"]:hover {
-  background-color: #8f949c;
+  background-color: #7d828a;
 }
-
 
 
 input[type="text"] {
-  background: #f7fcff;
-  color: rgb(0, 0, 0);
-  border-radius: 10px;
-  border-style: solid;
-  border-color: rgb(128, 146, 156);
-  height: 30px;
-  width: 170px;
-  margin: 0.5%;border: 1px solid 
-  font: bold 15px arial, sans-serif;
-}
-input[type="password"] {
-  background: #f7fcff;
+  background: #dde6eb;
   color: rgb(0, 0, 0);
   border-radius: 10px;
   border-style: solid;
@@ -60,6 +47,19 @@ input[type="password"] {
   height: 30px;
   width: 170px;
   margin: 0.5%;
+  border: 1px solid;
+  font: bold 15px arial, sans-serif;
+}
+input[type="password"] {
+  background: #dde6eb;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgb(128, 146, 156);
+  height: 30px;
+  width: 170px;
+  margin: 0.5%;
+  border: 1px solid;
   font: bold 15px arial, sans-serif;
 }
 
@@ -84,6 +84,7 @@ input[type="password"] {
   border: 1px solid #888;
   border-radius: 10px;
   width: 20%; /* Could be more or less, depending on screen size */
+  
 }
 
 /* The Close Button */
@@ -102,13 +103,12 @@ input[type="password"] {
 }
 
 .button {
+    background-color: #cfd8cf;
   border-radius: 10px;
   border-style: solid;
-
   position: absolute;
   top: 10px;
   right: 10px;
-
   display: flex;
   border-color: rgb(128, 146, 156);
   justify-content: center;
@@ -118,7 +118,7 @@ input[type="password"] {
   font: bold 15px arial, sans-serif;
 }
 .button:hover {
-  background-color: #d0ddd0;
+  background-color: #a9b1a9;
 }
 
 h1 {
@@ -147,30 +147,14 @@ article {
   font-size: 20px;
 }
 
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #333;
-  overflow: hidden;
-}
 
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
 
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #4caf50;
-  color: white;
-}
+#share-buttons img {
+    width: 35px;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0;
+    display: inline;
+    justify-items: center;
+    }
